@@ -1,0 +1,62 @@
+---
+import { list } from "../utils/menu";
+import Container from "./Container.astro";
+import Action from "../components/Action.astro";
+import Contact from "./sections/contact.astro";
+---
+
+<header
+    id="navbar"
+    class="w-full transition duration-300 justify-center fixed top-0 z-50"
+>
+    <Container>
+        <nav
+            aria-label="Main Navigation"
+            class="flex-row md:flex w-full justify-between items-center p-5"
+        >
+            <a href="/">
+                <img
+                    class="h-14 w-40 md:h-20 md:w-52 lg:h-24 lg:w-60"
+                    src="/logo-deluxe.png"
+                    alt="logo deluxe"
+                />
+            </a>
+            
+            <ul class="hidden flex-row md:flex gap-8">
+                {
+                    list.map((item, index) => (
+                        <li>
+                            <a
+                                class="font-bold hover:text-cyan-400 transition"
+                                href={item.path}
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </Container>
+</header>
+
+<script>
+    window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (!navbar) return;
+
+        if (window.scrollY >= 20) {
+            navbar.classList.remove("border-b-transparent");
+            navbar.classList.remove("bg-transparent");
+            navbar.classList.add("border-b");
+            navbar.classList.add("border-b-slate-300");
+            navbar.classList.add("bg-white");
+        } else {
+            navbar.classList.remove("border-b");
+            navbar.classList.remove("border-b-slate-300");
+            navbar.classList.remove("bg-white");
+            navbar.classList.add("border-b-transparent");
+            navbar.classList.add("bg-transparent");
+        }
+    });
+</script>

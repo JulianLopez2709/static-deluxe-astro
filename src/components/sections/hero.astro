@@ -1,0 +1,38 @@
+---
+import Action from "../Action.astro";
+
+---
+
+<section id="home" class="w-full mt-56" >
+    <div class="mb-56 m-auto flex flex-col justify-center items-center">
+        <h1 class="text-cyan-500 font-bold text-5xl mb-9 lg:text-6xl xl:text-7xl">OPTICA DELUXE</h1>
+        <p class="text-xl mb-9 px-10 sm:px-32 md:px-56 text-center">Somos una empresa que llevamos mas de 30 años en el mercado, dando un buen servicio.</p>
+        
+        <a href="/#contact" class="bg-slate-950 text-white px-9 py-3 rounded-xl hover:bg-cyan-400 hover:scale-110 transition font-bold">
+            Contactanos     
+        </a>
+
+        <div class="flex justify-center">
+            <Action
+              as="a"
+              class="flex justify-center items-center animate-bounce border-2 border-transparent bg-cyan-400 text-white rounded-full w-14 h-14 mt-32 hover:bg-white hover:text-cyan-400 hover:border-cyan-400 transition"
+              href="#about"
+              title="arrow down icon"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-8 h-8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
+              </svg>
+            </Action>
+          </div>
+    </div>
+</section>
